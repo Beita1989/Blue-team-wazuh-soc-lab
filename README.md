@@ -29,6 +29,14 @@ SOC-style Blue Team lab using **Wazuh + Sysmon** to centralize logs, trigger det
   - `install-sysmon.ps1`
   - `enable-logging.ps1`
   - `generate-attack-events.ps1`
+ 
+  - ## Screenshots (Illustrative)
+
+> Note: Screenshots in this repository are illustrative (mock).  
+> Real evidence is provided as logs, configs, and reproducible steps under the `/docs/` and `/configs/` directories.
+
+![Wazuh lab evidence mock](docs/capturas/evidence-wazuh.png)
+
 
 ## Evidence
 See: `docs/05-evidence/evidence-index.md`
