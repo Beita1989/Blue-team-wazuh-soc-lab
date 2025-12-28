@@ -1,0 +1,13 @@
+{
+  "EventID": 3,
+  "UtcTime": "2025-12-27 10:41:14.456",
+  "Computer": "WIN-ENDPOINT",
+  "User": "LAB\\user",
+  "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "Protocol": "tcp",
+  "DestinationIp": "203.0.113.10",
+  "DestinationPort": 443,
+  "DestinationHostname": "example-updates.com",
+  "Initiated": true,
+  "Description": "Sample Sysmon NetworkConnect event (sanitized)"
+}
