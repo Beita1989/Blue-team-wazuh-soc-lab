@@ -33,7 +33,7 @@ SOC-style Blue Team lab using **Wazuh + Sysmon** to centralize logs, trigger det
   - ## Screenshots (Illustrative)
  
   - > Note: Screenshots in this repository are illustrative (mock).  
-> Real evidence is provided via logs, configs, and reproducible steps under `/docs/` and `/configs/`.
+    > Real evidence is provided via logs, configs, and reproducible steps under `/docs/` and `/configs/`.
 ![Wazuh lab evidence mock](docs/capturas/evidence-wazuh.png)
 
 
