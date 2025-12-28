@@ -1,2 +1,38 @@
 # Blue-team-wazuh-soc-lab
 SOC-style Blue Team lab using Wazuh + Sysmon to centralize logs, trigger detections, and validate alerts with MITRE mapping and evidence screenshots.
+
+# Blue-team-wazuh-soc-lab
+
+SOC-style Blue Team lab using **Wazuh + Sysmon** to centralize logs, trigger detections, and validate alerts with **MITRE ATT&CK** mapping and evidence.
+
+## Objectives
+- Deploy Wazuh SIEM + agents
+- Enable Sysmon telemetry on Windows endpoints
+- Create / validate detections and map them to MITRE ATT&CK
+- Document evidence (screenshots + event IDs + queries)
+
+## Lab Architecture
+- Wazuh Manager: (add VM / IP sanitized)
+- Windows Endpoint(s): Sysmon + Wazuh Agent
+- Optional: Linux endpoint / attacker box
+
+## Repository structure
+- `docs/`
+  - `01-setup/setup-guide.md`
+  - `02-architecture/architecture.md`
+  - `03-detections/detections.md`
+  - `04-mitre/mitre-mapping.md`
+  - `05-evidence/evidence-index.md`
+- `configs/`
+  - `sysmon/sysmon-config.xml`
+  - `wazuh/README.md`
+- `scripts/powershell/`
+  - `install-sysmon.ps1`
+  - `enable-logging.ps1`
+  - `generate-attack-events.ps1`
+
+## Evidence
+See: `docs/05-evidence/evidence-index.md`
+
+## Disclaimer
+This repository is sanitized for public publication (no real tokens, passwords, or identifiable production data).
