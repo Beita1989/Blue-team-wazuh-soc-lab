@@ -1,3 +1,5 @@
+![Status](https://img.shields.io/badge/status-portfolio-informational)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 
 # Blue-team-wazuh-soc-lab
