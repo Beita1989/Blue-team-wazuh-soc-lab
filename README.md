@@ -15,6 +15,8 @@ SOC-style Blue Team lab using **Wazuh + Sysmon** to centralize logs, trigger det
 - Incident runbooks: `/docs/incident-runbooks/README.md`
 - Sysmon config: `/configs/sysmon/sysmon-config.xml`
 - PowerShell scripts: `/scripts/powershell/`
+- Changelog: /CHANGELOG.md
+- Roadmap: /ROADMAP.md
 
 
 ## Objectives
