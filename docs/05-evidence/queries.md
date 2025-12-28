@@ -54,3 +54,33 @@ event.module:sysmon AND win.system.eventID:11 AND (win.eventdata.TargetFilename:
 **Expected fields:**
 - `win.eventdata.TargetFilename` points to a created file
 - `win.eventdata.Image` shows the creating process (e.g., `powershell.exe`)
+
+- ---
+
+# D-002 — New Local User Created
+
+## Security EID 4720 (Account created) (if collected)
+Goal: Confirm a local account creation event is ingested.
+
+Search terms
+- event.code:4720 OR win.system.eventID:4720
+- TargetUserName / SubjectUserName (lab values)
+
+Expected fields
+- win.eventdata.TargetUserName
+- win.eventdata.SubjectUserName
+- win.eventdata.TargetDomainName (or Computer)
+
+## Sysmon EID 1 (Process Create) — net user / account creation
+Goal: Confirm process execution that creates a local user.
+
+Search terms
+- event.module:sysmon AND win.system.eventID:1
+- (net.exe OR net1.exe) AND user
+- ("/add" OR " /add") (depending on normalization)
+
+Expected fields
+- win.eventdata.Image contains net.exe OR net1.exe
+- win.eventdata.CommandLine contains "user" and "/add"
+- win.eventdata.User (or SubjectUserName) identifies the actor
+
