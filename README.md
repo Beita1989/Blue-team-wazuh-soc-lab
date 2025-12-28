@@ -17,6 +17,7 @@ SOC-style Blue Team lab using **Wazuh + Sysmon** to centralize logs, trigger det
 - PowerShell scripts: `/scripts/powershell/`
 - Changelog: /CHANGELOG.md
 - Roadmap: /ROADMAP.md
+- Reproduce: /docs/01-setup/reproduce.md
 
 
 ## Objectives
