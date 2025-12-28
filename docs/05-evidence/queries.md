@@ -57,30 +57,38 @@ event.module:sysmon AND win.system.eventID:11 AND (win.eventdata.TargetFilename:
 
 - ---
 
-# D-002 — New Local User Created
+## D-002 — New Local User Created (persistence / privilege changes)
 
-## Security EID 4720 (Account created) (if collected)
-Goal: Confirm a local account creation event is ingested.
+> Note: Field names may vary depending on ingestion (Wazuh agent / Winlogbeat / Elastic).
+> Use `win.eventdata.*` as reference. If your pipeline uses `winlog.event_data.*`, adapt the same semantics.
 
-Search terms
-- event.code:4720 OR win.system.eventID:4720
-- TargetUserName / SubjectUserName (lab values)
+### Security EID 4720 — User account created (if collected)
+**Goal:** Confirm a local account creation event is ingested.
 
-Expected fields
-- win.eventdata.TargetUserName
-- win.eventdata.SubjectUserName
-- win.eventdata.TargetDomainName (or Computer)
+**Search terms (KQL-like / UI filters):**
+Copy/paste (KQL-like):
+event.code:4720 OR win.system.eventID:4720
 
-## Sysmon EID 1 (Process Create) — net user / account creation
-Goal: Confirm process execution that creates a local user.
+Optional filters (lab values):
+- win.eventdata.TargetUserName:"lab-tempuser" (or winlog.event_data.TargetUserName)
+- win.eventdata.SubjectUserName:* (or winlog.event_data.SubjectUserName)
 
-Search terms
-- event.module:sysmon AND win.system.eventID:1
-- (net.exe OR net1.exe) AND user
-- ("/add" OR " /add") (depending on normalization)
+**Expected fields:**
+- `win.eventdata.TargetUserName` (or `winlog.event_data.TargetUserName`)
+- `win.eventdata.SubjectUserName` (or `winlog.event_data.SubjectUserName`)
+- `win.eventdata.TargetDomainName` / host identifier (varies by pipeline)
 
-Expected fields
-- win.eventdata.Image contains net.exe OR net1.exe
-- win.eventdata.CommandLine contains "user" and "/add"
-- win.eventdata.User (or SubjectUserName) identifies the actor
+---
 
+### Sysmon EID 1 — Process Create (net.exe / net1.exe)
+**Goal:** Confirm process execution that creates a local user.
+
+**Search terms:**
+Copy/paste (KQL-like):
+event.module:sysmon AND win.system.eventID:1 AND (win.eventdata.Image:*\\net.exe OR win.eventdata.Image:*\\net1.exe) AND win.eventdata.CommandLine:*net user* AND win.eventdata.CommandLine:*/add*
+
+**Expected fields:**
+- `win.eventdata.Image` contains `net.exe` or `net1.exe`
+- `win.eventdata.CommandLine` contains `net user` and `/add`
+- `win.eventdata.ParentImage` (optional but useful)
+- `win.eventdata.User` / actor identity (varies by pipeline)
