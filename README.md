@@ -34,6 +34,9 @@ SOC-style Blue Team lab using **Wazuh + Sysmon** to centralize logs, trigger det
  
   - > Note: Screenshots in this repository are illustrative (mock).  
     > Real evidence is provided via logs, configs, and reproducible steps under `/docs/` and `/configs/`.
+    >
+    > This lab is designed to be reproducible on a small VM stack (1 Wazuh manager + 1 Windows endpoint).
+
 ![Wazuh lab evidence mock](docs/capturas/evidence-wazuh.png)
 
 
