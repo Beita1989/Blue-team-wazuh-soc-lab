@@ -30,6 +30,11 @@ SOC-style Blue Team lab using **Wazuh + Sysmon** to centralize logs, trigger det
   - `enable-logging.ps1`
   - `generate-attack-events.ps1`
  
+  - ## Incident Response Runbooks
+
+- Runbooks: [/docs/incident-runbooks](/docs/incident-runbooks)
+
+ 
   - ## Screenshots (Illustrative)
  
   - > Note: Screenshots in this repository are illustrative (mock).  
