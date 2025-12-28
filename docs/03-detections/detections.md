@@ -26,7 +26,32 @@ This document lists the detections validated in this lab. Each detection is mapp
   - `/docs/05-evidence/log-samples/sysmon-eid11-file-create.sample.json`
 - Screenshot (illustrative): `/docs/capturas/evidence-wazuh.png`
 
+- ---
+
+## D-002 — New Local User Created (Persistence / privilege changes)
+
+Goal: Detect creation of a new local user on a Windows endpoint (common persistence / privilege escalation step).
+
+Signals
+- Windows Security Log: Event ID 4720 (A user account was created)  *(if collected)*
+- Sysmon EID 1 (Process Create): `net.exe user` / `net1.exe user` / `powershell.exe` creating users (lab scenario)
+- Optional: Sysmon EID 13 (Registry value set) if persistence is added (scenario dependent)
+
+MITRE ATT&CK
+- T1136.001 — Create Account: Local Account
+- (optional) T1098 — Account Manipulation (if modifying groups/privileges)
+
+Validation / Evidence
+- Runbook: /docs/incident-runbooks/IR-002-new-local-user.md
+- Queries: /docs/05-evidence/queries.md
+- Log samples:
+  - /docs/05-evidence/log-samples/security-eid4720-user-created.sample.json
+  - /docs/05-evidence/log-samples/sysmon-eid1-net-user-create.sample.json
+- Screenshot (illustrative): /docs/capturas/evidence-wazuh.png
+
+
 **Notes**
 - This is a portfolio lab. Replace “lab-sanitized” IPs/hosts with your environment values.
 - Field names can vary by pipeline; adapt queries accordingly.
+
 
