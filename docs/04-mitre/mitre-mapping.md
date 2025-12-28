@@ -17,3 +17,19 @@ This mapping documents how the lab detections relate to ATT&CK techniques. It is
 - Validation queries: `/docs/05-evidence/queries.md`
 - Runbook: `/docs/incident-runbooks/IR-001-suspicious-powershell.md`
 - Log samples: `/docs/05-evidence/log-samples/`
+
+---
+
+## D-002 — New Local User Created
+
+| Detection ID | Technique | Name | Why it fits | Primary telemetry |
+|---|---|---|---|---|
+| D-002 | T1136.001 | Create Account: Local Account | Creating a new local account is a common persistence step and enables access reuse | Security EID 4720 (if collected) / Sysmon EID 1 |
+| D-002 | (supporting) | Account creation via CLI | `net user` / PowerShell can create accounts in the lab scenario | Sysmon EID 1 (Process Create) |
+
+Evidence links
+- Detection doc: /docs/03-detections/detections.md
+- Validation queries: /docs/05-evidence/queries.md
+- Runbook: /docs/incident-runbooks/IR-002-new-local-user.md
+- Log samples: /docs/05-evidence/log-samples/
+
