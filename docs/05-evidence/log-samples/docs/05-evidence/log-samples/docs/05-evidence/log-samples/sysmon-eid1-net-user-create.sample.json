@@ -1,0 +1,12 @@
+{
+  "EventID": 1,
+  "UtcTime": "2025-12-27T10:45:10.000Z",
+  "Computer": "WIN-ENDPOINT",
+  "User": "LAB\\Administrator",
+  "Image": "C:\\Windows\\System32\\net.exe",
+  "CommandLine": "net user lab-tempuser P@ssw0rd! /add",
+  "ParentImage": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "IntegrityLevel": "High",
+  "Hashes": "SHA256=REDACTED",
+  "Description": "Sample Sysmon ProcessCreate (net user add) - sanitized"
+}
