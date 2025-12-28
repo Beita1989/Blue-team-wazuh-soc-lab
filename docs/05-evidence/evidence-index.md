@@ -19,14 +19,16 @@ This lab is validated by reproducible telemetry + detections.
 ### Screenshots (illustrative)
 - `/docs/capturas/evidence-wazuh.png`
 
-- ## Validation queries
+## Validation queries
 - Wazuh queries: `/docs/05-evidence/queries.md`
+
 
 ## Log samples (sanitized)
 
 - Sysmon EID 1 (Process Create): `/docs/05-evidence/log-samples/sysmon-eid1-process-create.sample.json`
 - Sysmon EID 3 (Network Connect): `/docs/05-evidence/log-samples/sysmon-eid3-network-connect.sample.json`
 - Sysmon EID 11 (File Create): `/docs/05-evidence/log-samples/sysmon-eid11-file-create.sample.json`
+
 
 
 
