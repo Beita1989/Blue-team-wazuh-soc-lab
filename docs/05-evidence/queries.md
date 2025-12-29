@@ -50,28 +50,31 @@ event.module:sysmon AND win.system.eventID:11 AND (win.eventdata.TargetFilename:
 ## Security EID 4720 — User account created (if collected)
 **Goal:** Confirm a local account creation event is ingested.
 
-**Copy/paste (KQL-like):**
+**Search terms (KQL-like / UI filters):**
+Copy/paste:
 event.code:4720 OR win.system.eventID:4720
 
-**Optional filters (lab values):**
-- `win.eventdata.TargetUserName:"lab-tempuser"` (or `winlog.event_data.TargetUserName`)
-- `win.eventdata.SubjectUserName:*` (or `winlog.event_data.SubjectUserName`)
+Optional (lab values):
+win.eventdata.TargetUserName:"lab-tempuser"
+win.eventdata.SubjectUserName:*
 
 **Expected fields:**
-- `win.eventdata.TargetUserName` (or `winlog.event_data.TargetUserName`)
-- `win.eventdata.SubjectUserName` (or `winlog.event_data.SubjectUserName`)
-- `win.eventdata.TargetDomainName` / host identifier (varies by pipeline)
+- win.eventdata.TargetUserName
+- win.eventdata.SubjectUserName
+- win.eventdata.TargetDomainName (or host identifier depending on pipeline)
 
 ---
 
 ## Sysmon EID 1 — Process Create (net.exe / net1.exe)
 **Goal:** Confirm process execution that creates a local user.
 
-**Copy/paste (KQL-like):**
+**Search terms:**
+Copy/paste:
 event.module:sysmon AND win.system.eventID:1 AND (win.eventdata.Image:*\\net.exe OR win.eventdata.Image:*\\net1.exe) AND win.eventdata.CommandLine:*net user* AND win.eventdata.CommandLine:*/add*
 
 **Expected fields:**
-- `win.eventdata.Image` contains `net.exe` or `net1.exe`
-- `win.eventdata.CommandLine` contains `net user` and `/add`
-- `win.eventdata.ParentImage` (optional but useful)
-- `win.eventdata.User` / actor identity (varies by pipeline)
+- win.eventdata.Image contains net.exe OR net1.exe
+- win.eventdata.CommandLine contains "net user" and "/add"
+- win.eventdata.ParentImage (optional, useful)
+- win.eventdata.User (actor identity, varies by pipeline)
+
