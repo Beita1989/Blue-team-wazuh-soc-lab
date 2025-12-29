@@ -35,6 +35,9 @@ This lab is validated by reproducible telemetry + detections.
 - Sysmon EID 1 (Process Create): `/docs/05-evidence/log-samples/sysmon-eid1-process-create.sample.json`
 - Sysmon EID 3 (Network Connect): `/docs/05-evidence/log-samples/sysmon-eid3-network-connect.sample.json`
 - Sysmon EID 11 (File Create): `/docs/05-evidence/log-samples/sysmon-eid11-file-create.sample.json`
+- - Security EID 4720 (User account created): /docs/05-evidence/log-samples/security-eid4720-user-created.sample.json
+- Sysmon EID 1 (net.exe user /add): /docs/05-evidence/log-samples/sysmon-eid1-net-user-create.sample.json
+
 
 
 
