@@ -1,0 +1,12 @@
+{
+  "EventID": 1,
+  "UtcTime": "2025-12-27T10:52:45.456Z",
+  "Computer": "WIN-ENDPOINT",
+  "User": "LAB\\user",
+  "Image": "C:\\Windows\\System32\\net.exe",
+  "CommandLine": "net user lab-tempuser StrongPassword!23 /add",
+  "ParentImage": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "IntegrityLevel": "Medium",
+  "Hashes": "SHA256=REDACTED",
+  "Description": "Sample Sysmon EID 1 ProcessCreate for local user creation via net.exe - sanitized"
+}
