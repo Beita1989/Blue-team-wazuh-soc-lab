@@ -1,0 +1,20 @@
+{
+  "EventID": 4720,
+  "UtcTime": "2025-12-27T10:52:12.123Z",
+  "Computer": "WIN-ENDPOINT",
+  "Channel": "Security",
+  "ProviderName": "Microsoft-Windows-Security-Auditing",
+  "win": {
+    "system": {
+      "eventID": 4720
+    },
+    "eventdata": {
+      "TargetUserName": "lab-tempuser",
+      "TargetDomainName": "WIN-ENDPOINT",
+      "SubjectUserName": "LAB\\user",
+      "SubjectDomainName": "LAB",
+      "SubjectLogonId": "0x0000000000001234"
+    }
+  },
+  "Description": "Sample Security event 4720 (A user account was created) - sanitized"
+}
